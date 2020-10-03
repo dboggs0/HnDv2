@@ -22,7 +22,8 @@ public class BulletBehavior : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo){
-        Health enemyHealth =hitInfo.gameObject.GetComponent<Health>();
+        Health enemyHealth = hitInfo.gameObject.GetComponent<Health>();
+
         enemyHealth.takeDamage(25);
         Destroy(gameObject);
         

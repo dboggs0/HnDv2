@@ -23,13 +23,19 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (transform.position.x < -10){
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo){
         PlayerHealth playerHealth =hitInfo.gameObject.GetComponent<PlayerHealth>();
-        playerHealth.damagePlayer(25);
-        Destroy(gameObject);
+
+        if (playerHealth != null){
+            playerHealth.damagePlayer(25);
+            Destroy(gameObject);
+        }
+        
 
     }
 }

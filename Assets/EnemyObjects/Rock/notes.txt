@@ -1,0 +1,3 @@
+A stationary obstacle that must be avoided or destroyed.  
+The rock has a high amount of HP and no attack capability unless the player’s airplane collides with it.  
+Colliding with a rock will cause a large amount of damage to the player’s airplane and destroy the rock.

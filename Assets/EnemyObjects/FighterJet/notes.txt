@@ -1,0 +1,2 @@
+An enemy fighter jet moves quickly, has a high amount of HP, and high-damage projectiles.  
+Colliding with an enemy fighter jet will cause a high amount of damage to the player’s airplane and destroy the enemy fighter jet.

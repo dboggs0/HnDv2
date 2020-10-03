@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MachineGun : MonoBehaviour
+public class EnemyMG : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject BulletSprite;
@@ -22,8 +22,8 @@ public class MachineGun : MonoBehaviour
     }
 
     void shoot(){
+
         Instantiate(BulletSprite, firePoint.position, firePoint.rotation);
         
     }
-
 }

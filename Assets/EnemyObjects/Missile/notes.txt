@@ -1,0 +1,2 @@
+A Surface-to-Air-Missile.  These move slowly toward the player, have a medium amount of HP, and no projectiles.  
+Colliding with a S.A.M. will cause a large amount of damage to the player’s airplane and destroy the S.A.M.

@@ -1,0 +1,12 @@
+Damage:
+The amount of damage dealt by a collision event (either with a vehicle/structure model or a projectile) is determined by the qualitative damage rating assigned to each player/enemy object in the Functional Specification:
+    Low		    -1 HP
+    Medium	    -2 HP
+    High		-3 HP
+After HP is removed from an object a check will be made to determine if the object’s HP is less than or equal to 0.  
+If so, the object destruction method will be called.
+
+Destruction:
+When an object is destroyed a destruction animation will play, and a destruction sound will be played.  
+After 2 seconds the object instance will be destroyed.  
+In the case of the player’s airplane the “game over” events will be triggered

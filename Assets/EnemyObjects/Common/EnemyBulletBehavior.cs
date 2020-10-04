@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBulletBehavior : MonoBehaviour
 {
-    public int speed = 20;
+    public int speed = 10;
     public Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class EnemyBulletBehavior : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo){
         PlayerHealth playerHealth = hitInfo.gameObject.GetComponent<PlayerHealth>();
-        //BUG throws exception when it hits another bullet
+
         if (playerHealth != null){
             playerHealth.damagePlayer(25);
         }

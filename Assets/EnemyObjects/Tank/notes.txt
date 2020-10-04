@@ -1,2 +1,10 @@
 An enemy tank moves slowly, has a high amount of HP, and high damage projectiles.  
 Colliding with an enemy tank destroy player’s airplane and the enemy tank.
+
+change the bullet type!
+
+make sure that the shells are:
+    bigger
+    more powerful
+    slower
+

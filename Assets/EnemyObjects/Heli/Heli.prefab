@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 640978832955014435}
-  speed: -3
+  speed: -2
 --- !u!114 &5709728106313804760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +198,7 @@ MonoBehaviour:
   firePoint: {fileID: 9128181816504049126}
   BulletSprite: {fileID: 2238912488106999421, guid: dc848e79d61069745be2fe4e7b610e83,
     type: 3}
+  fireRate: 2
 --- !u!1 &4650484607146214115
 GameObject:
   m_ObjectHideFlags: 0

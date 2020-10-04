@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMG : MonoBehaviour
+public class EnemyMGUN : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject BulletSprite;

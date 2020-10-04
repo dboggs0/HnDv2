@@ -16,15 +16,18 @@ public class EnemyBulletBehavior : MonoBehaviour
     void Update()
     {
         //destroy bullet if it goes off-screen
-        if (transform.position.x > -10){
+        if (transform.position.x < -10){
             Destroy(gameObject);
         }
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo){
-        Health enemyHealth = hitInfo.gameObject.GetComponent<Health>();
-
-        enemyHealth.takeDamage(25);
+        PlayerHealth playerHealth = hitInfo.gameObject.GetComponent<PlayerHealth>();
+        //BUG throws exception when it hits another bullet
+        if (playerHealth != null){
+            playerHealth.damagePlayer(25);
+        }
+        
         Destroy(gameObject);
         
     }

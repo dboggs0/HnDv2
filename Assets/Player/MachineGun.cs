@@ -7,6 +7,7 @@ public class MachineGun : MonoBehaviour
     public Transform firePoint;
     public GameObject BulletSprite;
     // Start is called before the first frame update
+    public float fireRate = 0.5f;
     void Start()
     {
         Debug.Log("start");
@@ -16,7 +17,10 @@ public class MachineGun : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Fire1")){
-            shoot();
+            InvokeRepeating("shoot", 0, fireRate);
+        }
+        if (Input.GetButtonUp("Fire1")) {
+            CancelInvoke("shoot");
         }
 
     }

@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 605852293591111935}
   - component: {fileID: 605852293591111934}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,6 +200,7 @@ MonoBehaviour:
   firePoint: {fileID: 1304445881876535373}
   BulletSprite: {fileID: 7274617613332048905, guid: 3d361fe02043a3d4c8d9f20d8a5d48d6,
     type: 3}
+  fireRate: 0.4
 --- !u!114 &605852293591111934
 MonoBehaviour:
   m_ObjectHideFlags: 0

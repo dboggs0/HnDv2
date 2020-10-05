@@ -5,29 +5,44 @@ using UnityEngine;
 public class MachineGun : MonoBehaviour
 {
     public Transform firePoint;
-    public GameObject BulletSprite;
+    public GameObject Bullet;
     // Start is called before the first frame update
-    public float fireRate = 0.5f;
+    public float fireRate = 2f;
+
+    float fireDelay = 0f;
+    public System.DateTime shotTimer;
     void Start()
     {
-        Debug.Log("start");
+        shotTimer = System.DateTime.Now;
+        setFireRate(fireRate);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")){
-            InvokeRepeating("shoot", 0, fireRate);
-        }
-        if (Input.GetButtonUp("Fire1")) {
-            CancelInvoke("shoot");
+        if (Input.GetButton("Fire1"))
+        {
+            if (System.DateTime.Now > shotTimer)
+            {
+                shotTimer = System.DateTime.Now;
+                shotTimer = shotTimer.AddSeconds(fireDelay);
+                shoot();
+            }
         }
 
     }
 
-    void shoot(){
-        Instantiate(BulletSprite, firePoint.position, firePoint.rotation);
-        
+    public void setFireRate(float newRate)
+    {
+        CancelInvoke("shoot");
+        fireRate = newRate;
+        fireDelay = 1 / fireRate;
+    }
+
+    void shoot()
+    {
+        Instantiate(Bullet, firePoint.position, firePoint.rotation);
+
     }
 
 }

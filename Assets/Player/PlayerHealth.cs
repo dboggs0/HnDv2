@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int HP = 100;
+    
+    public static int maxHP = 100;
+    public int HP = maxHP;
+    public int defBuff = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,17 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public void damagePlayer(int damage){
-        HP -= damage;
+        HP -= damage / defBuff;
+    }
+
+        public void healPlayer(int damage){
+        HP += damage;
+        if (HP > maxHP) {
+            HP = maxHP;
+        }
+    }
+
+    public void setDefBuff(int buff){
+        defBuff = buff;
     }
 }

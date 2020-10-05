@@ -5,44 +5,73 @@ using UnityEngine;
 public class MachineGun : MonoBehaviour
 {
     public Transform firePoint;
-    public GameObject Bullet;
-    // Start is called before the first frame update
+    public GameObject bullet;
+    public GameObject laser;
+    public string activeWeapon;
     public float fireRate = 2f;
 
     float fireDelay = 0f;
     public System.DateTime shotTimer;
+    bool lasering = false;
     void Start()
     {
+        activeWeapon = "bullet";
         shotTimer = System.DateTime.Now;
         setFireRate(fireRate);
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+
+
+        if (activeWeapon == "laser")
         {
-            if (System.DateTime.Now > shotTimer)
+            if (!lasering)
             {
-                shotTimer = System.DateTime.Now;
-                shotTimer = shotTimer.AddSeconds(fireDelay);
+                lasering = true;
                 shoot();
+                //shoot for 5 seconds --- taken care of by laser_behavior.cs
             }
         }
+        else
+        {
+
+            lasering = false;
+            if (Input.GetButton("Fire1"))
+            {
+                if (System.DateTime.Now > shotTimer)
+                {
+                    shotTimer = System.DateTime.Now;
+                    shotTimer = shotTimer.AddSeconds(fireDelay);
+                    shoot();
+                }
+            }
+        }
+
 
     }
 
     public void setFireRate(float newRate)
     {
-        CancelInvoke("shoot");
         fireRate = newRate;
         fireDelay = 1 / fireRate;
     }
 
     void shoot()
     {
-        Instantiate(Bullet, firePoint.position, firePoint.rotation);
+        if (activeWeapon == "bullet")
+        {
+            Instantiate(bullet, firePoint.position, firePoint.rotation);
+        }
+        if (activeWeapon == "laser")
+        {
+            Instantiate(laser, firePoint.position, firePoint.rotation);
+        }
 
     }
+
 
 }

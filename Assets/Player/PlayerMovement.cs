@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        speed = 200;
+        speed = 300;
         forward = new Vector2(speed,0);
         backward = new Vector2(-speed,0);
         up = new Vector2(0,speed);
@@ -36,8 +36,8 @@ public class PlayerMovement : MonoBehaviour
         if (transform.position.x < -8.3){
             transform.position = new Vector2((float) -8.3, transform.position.y);
         }
-        if (transform.position.x > -6.4){
-            transform.position = new Vector2((float) -6.4, transform.position.y);
+        if (transform.position.x > 8.3){
+            transform.position = new Vector2((float) 8.3, transform.position.y);
         }
         if (transform.position.y > 4.3){
             transform.position = new Vector2(transform.position.x, (float) 4.3);

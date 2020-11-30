@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f380ec07ee6c7b14fb4cee8353bc62e9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - imgRepairKit: {fileID: 21300000, guid: 3c6c9e5b6cb7140449b9e2ca96a22adc, type: 3}
+  - imgRapidFire: {fileID: 21300000, guid: c62192ae37820c842bed95c66a9f559e, type: 3}
+  - imgLaser: {fileID: 21300000, guid: 6f7c658fb8bd7e246a24c9e061257c2e, type: 3}
+  - imgShield: {fileID: 21300000, guid: 9a5eb8e06cbd4f1499f8d0ebabddb31f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

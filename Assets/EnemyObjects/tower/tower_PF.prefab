@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 5998824647920134822}
   - component: {fileID: 5998824647920134823}
   - component: {fileID: 4180852541286011111}
-  - component: {fileID: 6571281936674362117}
+  - component: {fileID: 3920602313255025648}
   m_Layer: 0
-  m_Name: RadioTowerPF
-  m_TagString: Untagged
+  m_Name: tower_PF
+  m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +54,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &5998824647920134823
 MonoBehaviour:
@@ -82,8 +82,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90186e46146a3454f871bf656fcfd28f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 730263987270980247, guid: 1e2ed34557001e64cab043a9b4927a7f,
+    type: 3}
   HP: 50
---- !u!60 &6571281936674362117
+--- !u!60 &3920602313255025648
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,11 +110,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.02196002, y: 0.6120361}
-      - {x: -0.07996827, y: -0.2253485}
-      - {x: -0.19982117, y: -0.61137515}
-      - {x: 0.20714128, y: -0.6113749}
-      - {x: 0.06532788, y: -0.2399885}
+    - - {x: 0, y: 0.58209926}
+      - {x: -0.18055183, y: -0.5790224}
+      - {x: 0.59409004, y: -0.6131261}
+      - {x: 0.8489734, y: -0.60006654}
+      - {x: 0.8008735, y: 0.5702051}
 --- !u!1 &8723594577248558422
 GameObject:
   m_ObjectHideFlags: 0

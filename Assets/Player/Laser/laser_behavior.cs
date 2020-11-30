@@ -7,11 +7,13 @@ public class laser_behavior : MonoBehaviour
     public int speed = 20;
     public Rigidbody2D rb;
     GameObject gun;
-    System.DateTime pUpTimer;
+    double pUpTimer;
     // Start is called before the first frame update
     void Start()
     {
-        pUpTimer = System.DateTime.Now.AddSeconds(5);
+        //Debug.Log("Player is now lasering");
+        Stats.SetActivePowerUp("pUpL");
+        pUpTimer = 7f;
         gun = GameObject.FindWithTag("playerGun");
     }
 
@@ -21,7 +23,10 @@ public class laser_behavior : MonoBehaviour
         Transform theSpot = gun.GetComponent<Transform>();
 
         transform.position = new Vector2(theSpot.position.x, theSpot.position.y);
-        if (System.DateTime.Now >= pUpTimer)
+
+        pUpTimer -= Time.deltaTime;
+
+        if (pUpTimer <= 0)
         {
             Destroy(gameObject);
             ///MachineGun.cs activeWeapon = "bullet";
@@ -30,6 +35,7 @@ public class laser_behavior : MonoBehaviour
             {
                 MachineGun gunScript = player.GetComponent<MachineGun>();
                 gunScript.activeWeapon = "bullet";
+                Stats.SetActivePowerUp("");
             }
         }
     }
@@ -40,7 +46,7 @@ public class laser_behavior : MonoBehaviour
 
         if (enemyHealth != null)
         {
-            enemyHealth.takeDamage(100);
+            enemyHealth.Die();
         }
     }
 

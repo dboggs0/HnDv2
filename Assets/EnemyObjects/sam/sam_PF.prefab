@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 7000476444971187887}
   - component: {fileID: 8488616960217281438}
   m_Layer: 0
-  m_Name: Missile
-  m_TagString: Untagged
+  m_Name: sam_PF
+  m_TagString: sam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +54,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &3919519573714988806
 MonoBehaviour:
@@ -80,7 +80,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90186e46146a3454f871bf656fcfd28f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 6804646809043192930, guid: 2b27fbfe55a2f8e4289fc9bc8a39b3cc,
+    type: 3}
   HP: 0
 --- !u!1001 &5201467099104733983
 PrefabInstance:

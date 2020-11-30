@@ -13,10 +13,14 @@ public class pUpL_Behavior : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        Debug.Log(hitInfo.gameObject.name);
         MachineGun mg = hitInfo.gameObject.GetComponent<MachineGun>();
         if (mg != null)
         {
+            Stats.SetActivePowerUp("pUpL");
+            GameObject sfxPlayer = GameObject.FindGameObjectWithTag("SFX_Player");
+            SFX_Player player = sfxPlayer.GetComponent<SFX_Player>();
+            player.Play("powerUp");
+
             mg.activeWeapon = "laser";
             goHide();
         }

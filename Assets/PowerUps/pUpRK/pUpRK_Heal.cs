@@ -17,7 +17,12 @@ public class pUpRK_Heal : MonoBehaviour
             PlayerHealth playerHealth = hitInfo.gameObject.GetComponent<PlayerHealth>();
 
             if (playerHealth != null){
-                playerHealth.healPlayer(25);
+                playerHealth.healPlayer(66);
+
+                GameObject sfxPlayer = GameObject.FindGameObjectWithTag("SFX_Player");
+                SFX_Player player = sfxPlayer.GetComponent<SFX_Player>();
+                player.Play("powerUp");
+
                 Destroy(gameObject);
             }
         

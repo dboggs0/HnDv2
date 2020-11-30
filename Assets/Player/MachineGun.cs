@@ -9,6 +9,8 @@ public class MachineGun : MonoBehaviour
     public GameObject laser;
     public string activeWeapon;
     public float fireRate = 2f;
+    public GameObject planeBody;
+    Color defaultBodyColor;
 
     float fireDelay = 0f;
     public System.DateTime shotTimer;
@@ -18,7 +20,7 @@ public class MachineGun : MonoBehaviour
         activeWeapon = "bullet";
         shotTimer = System.DateTime.Now;
         setFireRate(fireRate);
-
+        defaultBodyColor = planeBody.GetComponent<SpriteRenderer>().color;
 
     }
 
@@ -26,12 +28,15 @@ public class MachineGun : MonoBehaviour
     void Update()
     {
 
-
+        if (Stats.GamePaused) {
+            return;
+        }
         if (activeWeapon == "laser")
         {
             if (!lasering)
             {
                 lasering = true;
+                planeBody.GetComponent<SpriteRenderer>().color = Color.white;
                 shoot();
                 //shoot for 5 seconds --- taken care of by laser_behavior.cs
             }
@@ -40,7 +45,8 @@ public class MachineGun : MonoBehaviour
         {
 
             lasering = false;
-            if (Input.GetButton("Fire1"))
+            planeBody.GetComponent<SpriteRenderer>().color = defaultBodyColor;
+            if (Input.GetButton("Fire1") || Input.GetKey(KeyCode.Space))
             {
                 if (System.DateTime.Now > shotTimer)
                 {
@@ -64,6 +70,9 @@ public class MachineGun : MonoBehaviour
     {
         if (activeWeapon == "bullet")
         {
+            GameObject sfxPlayer = GameObject.FindGameObjectWithTag("SFX_Player");
+            SFX_Player player = sfxPlayer.GetComponent<SFX_Player>();
+            player.Play("pewPew");
             Instantiate(bullet, firePoint.position, firePoint.rotation);
         }
         if (activeWeapon == "laser")
